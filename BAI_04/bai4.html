@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+    background-color: #fbfbfb;
+    color: #4b1bc4;
+    padding: 10px;
+}
+.nav-bar {
+    float: left;
+}
+
+.nav-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar ul li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.nav-bar ul li a {
+    color: #0b0606;
+    text-decoration: none;
+}
+
+.nav-bar ul li a:hover {
+    color: #e30f0f;
+}
+
+.status .item {
+    float: right;
+    margin-right: 10px;
+    padding: 10px;
+   
+}
+
+.status .item p {
+    margin-bottom: 5px;
+}
+
+.status .item .online {
+   
+    background-color: #00FF00;
+    padding: 5px;
+    border-radius: 0%;
+}
+
+.status .item .offline {
+   
+    background-color: #FF0000;
+    padding: 5px;
+    border-radius: 0%;
+    clear: both;
+
+}
+.status .item:nth-of-type(2) {
+    position: absolute;
+    bottom: 75%; 
+    right: 0;
+}
+
+
+main {
+    padding: 50px;
+}
+
+.contact, .support, .feedback {
+    background-color: #ffffff;
+    padding: 5px;
+    margin-right: 0px;
+}
+
+.contact h5, .support h5, .feedback h5 {
+    display: inline-block;
+    margin-top: 50;
+}
+
+.contact p, .support p, .feedback p {
+    float: left ;
+    margin-right: 20px;
+}
+
+.contact a, .support a, .feedback a {
+    
+    color: #080202;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.contact a:hover, .support a:hover, .feedback a:hover {
+    color: #c71f1f;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="#">✓  Quy định sử dụng</a></li>
+                <li><a href="#">✓  Hướng dẫn thanh toán</a></li>
+                <li><a href="#">✓  Download bảng giá</a></li>
+            </ul>
+        </div>
+        <div class="status">
+            <div class="item">
+                <p>Sales 1:</p>
+                <span class="online">I'm Online</span><br>
+                <h9>Send me a messenger</h9>
+            </div>
+            <div class="item">
+                <p>Sales 2:</p>
+                <span class="offline">Not Online right now</span><br>
+                <h9>right now</h9>
+            </div>
+        </div>
+    </header>
+        <main>
+            <div style="display: flex; justify-content: space-left">
+            <section class="contact"></section>
+            <p><img src="https://th.bing.com/th/id/OIP.xP-3ifDUdfaG-sIFHMSKpgHaHa?w=510&h=510&rs=1&pid=ImgDetMain" style="width:30px;height:30px;"></p>
+                <a href="#"><h5>Liên hệ kinh doanh</h5></a>
+                
+            </section>
+            <section class="support">
+                <p><img src="https://th.bing.com/th/id/OIP.xP-3ifDUdfaG-sIFHMSKpgHaHa?w=510&h=510&rs=1&pid=ImgDetMain" style="width:30px;height:30px;"></p>
+                <a href="#"><h5>Hỗ trợ kỹ thuật</h5></a>
+                
+            </section>
+            <section class="feedback">
+                <p><img src="https://th.bing.com/th/id/OIP.xP-3ifDUdfaG-sIFHMSKpgHaHa?w=510&h=510&rs=1&pid=ImgDetMain" style="width:30px;height:30px;"></p>
+                <a href="#"><h5>Góp ý công ty</h5></a>
+                
+            </section>
+            </div>
+        </main>
+</body>
+</html>
