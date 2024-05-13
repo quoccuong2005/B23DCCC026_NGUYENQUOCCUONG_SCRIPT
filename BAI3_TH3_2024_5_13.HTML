@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 3</title>
+</head>
+<body>
+<div id="slider">
+    <img src="https://th.bing.com/th/id/OIP.0BBoapCf7CAAKtLmMZ7H9gHaFj?rs=1&pid=ImgDetMain" alt="Image 1">
+    <img src="https://th.bing.com/th?id=OIF.ANZAqGKStmlXr%2f1blUpXIg&rs=1&pid=ImgDetMain" alt="Image 2">
+    <img src="https://th.bing.com/th/id/OIP.6IBhxhzE_v434ChYUpiJTAHaEo?rs=1&pid=ImgDetMain" alt="Image 3">
+</div>
+
+<button id="prevBtn">Back</button>
+<button id="nextBtn">Next</button>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    var slideIndex = 0;
+    var slides = $("#slider img");
+    var timer;
+
+    function showSlide(index) {
+        slides.hide();
+        slides.eq(index).show();
+    }
+
+    function nextSlide() {
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        }
+        showSlide(slideIndex);
+    }
+
+    function prevSlide() {
+        slideIndex--;
+        if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+        }
+        showSlide(slideIndex);
+    }
+
+    function startTimer() {
+        timer = setInterval(nextSlide, 5000);
+    }
+
+    function stopTimer() {
+        clearInterval(timer);
+    }
+
+    $("#nextBtn").click(function() {
+        stopTimer();
+        nextSlide();
+        startTimer();
+    });
+
+    $("#prevBtn").click(function() {
+        stopTimer();
+        prevSlide();
+        startTimer();
+    });
+
+    showSlide(slideIndex);
+    startTimer();
+});
+</script>
+</body>
+</html>
