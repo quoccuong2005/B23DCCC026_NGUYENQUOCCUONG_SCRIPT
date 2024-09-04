@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        justify-content: space-between;
+    }
+
+    form {
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    button {
+        padding: 6px 12px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    input[type="text"], select, input[type="date"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    </style>
+</head>
+<body>
+    <h1>Student Management</h1>
+
+    <form id="studentForm">
+        <label for="studentId">Student ID:</label>
+        <input type="text" id="studentId" name="studentId" required><br>
+
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br>
+
+        <label for="hometown">Hometown:</label>
+        <input type="text" id="hometown" name="hometown" required><br>
+
+        <button type="submit">Add Student</button>
+    </form>
+
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Date of Birth</th>
+                <th>Hometown</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+
+    <script>
+        
+        class Student {
+            constructor(studentId, fullName, gender, dob, hometown) {
+            this.studentId = studentId;
+            this.fullName = fullName;
+            this.gender = gender;
+            this.dob = dob;
+            this.hometown = hometown;
+            }
+        }
+
+        
+        class StudentManager {
+            constructor() {
+            this.students = [];
+            }
+
+            addStudent(student) {
+            this.students.push(student);
+            this.saveStudents();
+            }
+
+            updateStudent(studentId, updatedStudent) {
+            const index = this.students.findIndex(student => student.studentId === studentId);
+            if (index !== -1) {
+                this.students[index] = updatedStudent;
+                this.saveStudents();
+            }
+            }
+
+            deleteStudent(studentId) {
+            this.students = this.students.filter(student => student.studentId !== studentId);
+            this.saveStudents();
+            }
+
+            displayStudents() {
+            const tableBody = document.querySelector("#studentTable tbody");
+            tableBody.innerHTML = "";
+
+            this.students.forEach(student => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                <td>${student.studentId}</td>
+                <td>${student.fullName}</td>
+                <td>${student.gender}</td>
+                <td>${student.dob}</td>
+                <td>${student.hometown}</td>
+                <td>
+                    <button onclick="editStudent('${student.studentId}')">Edit</button>
+                    <button onclick="deleteStudent('${student.studentId}')">Delete</button>
+                </td>
+                `;
+                tableBody.appendChild(row);
+            });
+            }
+
+            saveStudents() {
+            localStorage.setItem("students", JSON.stringify(this.students));
+            }
+
+            loadStudents() {
+            const storedStudents = localStorage.getItem("students");
+            if (storedStudents) {
+                this.students = JSON.parse(storedStudents);
+            }
+            }
+        }
+
+        
+        const studentManager = new StudentManager();
+        studentManager.loadStudents();
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const studentId = document.querySelector("#studentId").value;
+            const fullName = document.querySelector("#fullName").value;
+            const gender = document.querySelector("#gender").value;
+            const dob = document.querySelector("#dob").value;
+            const hometown = document.querySelector("#hometown").value;
+
+            const student = new Student(studentId, fullName, gender, dob, hometown);
+            studentManager.addStudent(student);
+            studentManager.displayStudents();
+
+            document.querySelector("#studentForm").reset();
+        }
+
+           
+        function deleteStudent(studentId) {
+            studentManager.deleteStudent(studentId);
+            studentManager.displayStudents();
+        }
+
+        
+        function editStudent(studentId) {
+            const student = studentManager.students.find(student => student.studentId === studentId);
+            if (student) {
+            document.querySelector("#studentId").value = student.studentId;
+            document.querySelector("#fullName").value = student.fullName;
+            document.querySelector("#gender").value = student.gender;
+            document.querySelector("#dob").value = student.dob;
+            document.querySelector("#hometown").value = student.hometown;
+            }
+        }
+
+        document.querySelector("#studentForm").addEventListener("submit", handleFormSubmit);
+
+        studentManager.displayStudents();
+    </script>
+</body>
+</html>
