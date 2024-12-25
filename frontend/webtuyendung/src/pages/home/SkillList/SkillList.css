@@ -1,0 +1,35 @@
+/* SkillList.css */
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  a {
+    text-decoration: none; /* Remove underline for links */
+  }
+  
+  .skill-tag {
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .skill-tag:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+  }
+  /* CSS cho dòng kẻ ngăn cách */
+.divider {
+    border: none; /* Xóa viền mặc định */
+    height: 2px; /* Độ dày của dòng kẻ */
+    background-color: #ddd; /* Màu sắc của dòng kẻ */
+    margin: 20px auto; /* Khoảng cách trên và dưới, căn giữa */
+    width: 80%; /* Độ dài của dòng kẻ */
+  }
+  

@@ -1,0 +1,28 @@
+.layout-admin {
+    height: 100vh;
+  
+    &__main {
+      display: flex;
+      background: #f5f5f5;
+  
+      &--fold .layout-admin__sider {
+        width: 80px !important; /* Khi sidebar thu gọn */
+      }
+    }
+  
+    &__sider {
+      background: #fff;
+      transition: all 0.2s ease-in-out;
+  
+      .ant-layout-sider-trigger {
+        background: #001529;
+      }
+    }
+  
+    &__content {
+      padding: 20px;
+      background: #f8f3f3;
+      overflow-y: auto;
+    }
+  }
+  

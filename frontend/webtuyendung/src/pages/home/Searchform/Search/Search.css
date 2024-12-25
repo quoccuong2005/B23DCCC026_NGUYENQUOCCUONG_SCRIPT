@@ -1,0 +1,45 @@
+.job-item-container {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Đảm bảo các item xuống hàng khi hết chỗ */
+   
+    /* justify-content: center; Canh giữa các item */
+  }
+  
+  .job-item {
+   padding: 12px;
+    
+  }
+  
+  @media (max-width: 768px) {
+    .job-item {
+      flex: 1 1 calc(50% - 16px); /* Thu nhỏ trên màn hình nhỏ */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .job-item {
+      flex: 1 1 100%; /* Chiếm toàn bộ chiều rộng trên màn hình rất nhỏ */
+    }
+  }
+.city{
+    background: #fff;
+    border: 1px solid #4096FF;
+    border-radius: 24px;
+    color: #4096FF;
+    padding-right: 6px;
+    margin-left: 6px;
+}  
+.tags{
+    background: #fff;
+    border: 1px solid #4096FF;
+    border-radius: 24px;
+    color: #4096FF;
+    padding-right: 6px;
+    margin-left: 6px;
+}
+.home{
+    color: #4096FF;
+   
+    font-weight: bold;
+}

@@ -1,0 +1,166 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+  
+    &__logo {
+      &--link{
+        text-decoration: none ;
+      }
+      &--item{
+        
+        
+        
+        color: #007BFF;
+        font-size: 29px;
+        
+      }
+    }
+  
+    &__menu {
+      display: flex;
+      align-items: center;
+  
+      &--user {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+  
+        li {
+          margin-left: 15px;
+  
+          a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+            transition: color 0.3s;
+  
+            &:hover {
+              color: #0056b3;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .main {
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .footer {
+    background-color: #f5f7fa; // Màu nền của footer
+    padding: 30px 20px; // Khoảng cách bên trong footer
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+  
+    .footer__company {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  
+    .footer__info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+  
+      .footer__details {
+        text-align: left;
+  
+        p {
+          margin: 5px 0;
+        }
+  
+        i {
+          color: #28a745; // Icon màu xanh lá cây
+          margin-right: 5px;
+        }
+      }
+  
+      .footer__links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+  
+        .footer__link-item {
+          text-decoration: none;
+          color: #333;
+          font-weight: 600;
+  
+          &:hover {
+            color: #1e90ff;
+            text-decoration: underline;
+          }
+        }
+      }
+  
+      .footer__qr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+  
+        img {
+          width: 120px; // Kích thước QR Code
+          height: auto;
+          margin-bottom: 5px;
+        }
+  
+        a {
+          text-decoration: none;
+          color: #007bff;
+          font-weight: bold;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  
+    .footer__hrtech {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+  
+      .footer__service {
+        background-color: #007bff;
+        color: white;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin: 5px;
+  
+        &--green {
+          background-color: #007bff;
+        }
+     
+  
+        font-size: 14px;
+        font-weight: 500;
+  
+        &:hover {
+          filter: brightness(1.1);
+          cursor: pointer;
+        }
+      }
+    }
+  
+    .footer__copyright {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #777;
+    }
+  }
+  
+  

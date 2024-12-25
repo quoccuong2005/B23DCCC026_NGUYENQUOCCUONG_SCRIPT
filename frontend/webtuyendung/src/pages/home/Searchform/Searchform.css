@@ -1,0 +1,111 @@
+/* .search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid ;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 8px 15px;
+    max-width: 900px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+.search-tags {
+   
+}
+input{
+    border: none;
+    width: 177px;
+}
+input:focus{
+    outline: none; 
+  border: none;
+}
+select{
+    border: none;
+    width: 177px;
+}
+select:focus{
+    outline: none; 
+  border: none;
+}
+.search-button{
+    background-color: #4096FF;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+.search-item{
+    color: #DCDCDC;
+    margin-left: 159px;
+} */
+ /* Searchform.css */
+h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #f7f7f7;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    top: -16px;
+    position: relative;
+  }
+  
+  .search-tags input,
+  .search-city select {
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #333;
+    width: 200px;
+    border-radius: 50px;
+    background-color: #fff;
+  }
+  
+  .search-tags input::placeholder {
+    color: #aaa;
+  }
+  
+  .search-item {
+    color: #ccc;
+    font-size: 18px;
+  }
+  
+  .search-button {
+    background-color: #4096FF;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 8px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #4096FF;
+  }
+  
+  .search-button svg {
+    font-size: 16px;
+  }
+  
